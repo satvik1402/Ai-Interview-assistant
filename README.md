@@ -56,3 +56,13 @@ The application will be available at `http://localhost:5173`.
 - **React Router:** For handling client-side routing.
 - **pdf.js:** For parsing PDF resumes in the browser.
 
+<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/85fdf043-4517-4441-95db-5afaf5eb4094" />
+<img width="1919" height="972" alt="image" src="https://github.com/user-attachments/assets/f68bf7d5-7977-4288-b006-2f93abdb3c10" />
+<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/e73e7cad-c1c2-4e91-bc50-40507dd95531" />
+<img width="1919" height="975" alt="image" src="https://github.com/user-attachments/assets/cc896c30-805c-457f-993a-3fde249c84bf" />
+<img width="1919" height="928" alt="image" src="https://github.com/user-attachments/assets/92a29117-0660-47df-8f7d-3fd744d264cb" />
+
+
+
+
+
