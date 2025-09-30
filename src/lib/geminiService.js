@@ -1,6 +1,5 @@
-// Get API key from environment variables with fallback
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyBwEjRBe6oCRvJLVd893bL8fe3zMpsBaLg';
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
+// Get API key from environment variables
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 // Rate limiting and caching
 let lastApiCall = 0;
@@ -8,14 +7,16 @@ const MIN_DELAY_BETWEEN_CALLS = 2000; // 2 seconds between API calls
 const questionsCache = new Map();
 
 export const generateQuestionsFromResume = async (resumeText) => {
-  if (!API_KEY || API_KEY === 'YOUR_GEMINI_API_KEY') {
-    console.error('Gemini API key is not set.');
+  if (!API_KEY) {
+    console.error('Gemini API key is not set in environment variables.');
     return {
-      easy: ['Fallback: Tell me about yourself.'],
-      medium: ['Fallback: Describe a challenging project.'],
-      hard: ['Fallback: Where do you see yourself in 5 years?'],
+      easy: ['Tell me about yourself.', 'What are your strengths?', 'Why do you want this job?'],
+      medium: ['Describe a challenging project you worked on.', 'How do you handle stress?', 'What motivates you?'],
+      hard: ['Where do you see yourself in 5 years?', 'What is your biggest weakness?', 'Why should we hire you?'],
     };
   }
+
+  const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
   // Check cache first
   const cacheKey = resumeText.substring(0, 100); // Use first 100 chars as cache key
