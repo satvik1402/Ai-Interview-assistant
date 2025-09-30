@@ -1,5 +1,5 @@
-// Get API key from environment variables
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+// Get API key from environment variables with fallback
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'AIzaSyBwEjRBe6oCRvJLVd893bL8fe3zMpsBaLg';
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`;
 
 // Rate limiting and caching
